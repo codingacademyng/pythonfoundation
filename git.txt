@@ -1,0 +1,194 @@
+GIT IS A FREE VERSION CONTROL SYSTEM
+IT IS FREE AND OPEN SOURCE CONTROL MANAGEMENT
+Most programmers make use of GIT on a daily basis, so it is very necessary for you as a devekloper
+GIT helps developer to track their process, you can work on your program 
+and save it on git and you can do this again, again and again 
+naming it with different versions.
+With GIT, you can make changes to your project overtime, and also revisit those changes.
+
+Take for instance, if you have a project, and you want to revisit it, you can easily do that with GIT.
+Better put, if you are writing a project,and you copy some part of code online into your project,
+if there is an error in the project caused by the copied code, you can easily remove it with GIT.
+
+GIT INSTALLATION
+WHERE TO USE GIT
+At installation, GIT comes along with a terminal called GIT BASH,
+GIT can be used on this terminal or Powershell, command prompt and any other command area on our PC.
+
+CHECKING FOR GIT VERSION
+git --version
+
+WORKING WITH GIT
+The first thing is to configure the user.
+You can configure the user by running the following command:
+git config --global user.name "name of the user"
+git config --global user.email email of the user
+
+CREATING A DEFAULT branch
+git config --global init.default branch (name of the branch e.g. "master" or "main")
+
+INITIATING GIT
+Navigate to the directory where the project is located and enter:
+git init --
+This will automatically initiate git into the folder.
+if we go to the folder, there may not be anything significant but we can easily see it by clicking on view and unhide hidden items.
+
+GIT status
+when you run the command "git status", it will show the status of the project.
+At first time, git is expected to show us that all files there are untracked.
+
+WHAT IS untracked, MODIFIED AND ADDED?
+untracked means git is not tracking the files in the repository,
+modified means the files are tracked but there are unadded contents.
+Added means the files have been committed.
+
+ADDING A FILE INTO A repository
+you can add a file to a repository by running
+git add (file name)
+or git add .
+or git add --all
+or git add -A
+git add . will add all files in the repository.
+
+REMOVING A TRACKED FILE or UNSTAGING A TRACKED FILE
+git rm --cache (file name) #this will remove the file in the repository
+
+GIT ignores
+Git ignnores helps keeps files that you don't want people to see in the repository
+go to the folder, make a new "txt" file and rename it #(.gitignore)
+open the file using any text editor and describe what you want to ignore
+e.g. # ignore all .txt files
+*.txt (save the file )
+you can go to https://github.com/github/gitignore
+
+COMMITING IN GIT
+This is like saving a version of the project.
+we can commit by typing (git commit -m "this is first version")
+
+git diff
+This will show us the difference between our tracked files and modified files
+
+STAGING IN GIT
+Staging can best be explained as saving in stages until you are ready to commit.
+
+DELETING A FILE YOU DON'T WANT PEOPLE TO SEE 
+git rm "the file name " #DO WELL TO REMEMBER THE NAME INCASE THE FILE IS NEEDED AGAIN.
+
+RETREIVING THE DELETED FILE
+git restore "the file name"
+
+RENAMING A FILE USING THE GIT BASH OR COMMAND prompt
+git mv "the file name" "the new file name"
+
+SHOWING YOUR COMMITS 
+git log
+git log --oneline #will help us show all commits in online
+
+Take for instance, you make a mistake while commiting, you can recommit it again
+git commit -m "mistake corrected" --amend
+
+
+git log -p #will show all changes made to commit.
+
+
+WHAT IS GIT REBASE?
+GIT REBASE means when you change the othr of how you commit in a repository.
+
+to jump to where a stage of commit in git
+git reset (unique code identifier of that commit)
+or 
+git checkout ("commit code") - This will restore the previous version of the commit you made
+CREATING A NEW BRANCH IN GIT 
+Take for instance, you want to edit something in your project and you don't want it to affect the original file, you can create a branch
+git branch (branch name)
+
+TO CONFIRM HOW MANY BRANCH WE HAVE
+git branch
+
+SWITCHING FROM ONE BRANCH TO THE OTHER
+git switch (branch name)
+when you switch to a branch, everything in your main branch move into the branch you switch to.
+modification can be done and check the status.
+
+TO COMMIT INTO THE BRANCH
+git commit -a -m "Note to identify that it has been modified"
+Switching back to the main branch will show that nothing has changed but we need to merge them together.
+
+HOW TO MERGE BRANCH:
+git merge -m "Note to identify that it has been merged" (branch name)
+
+DELETING A BRANCH:
+since the branches have been merged, there is no need to keep the other branch, so we can delete it
+git branch -d (branch name)
+to confirm if deleted, we can enter (git branch)
+
+WHAT IF WE HAVE CONFLICTING BRANCHES?
+In a situtation whereby you created a branch but before you were done with the branch, main has changed,
+e.g. you are working with people and you are to fix bugs in the main branch, so you created a branch,
+what if before you finished with the branch, then some modifications has happened in the main? 
+
+Let's create a new branch using short code
+git switch -c correction #this will create a new branch 
+and edit the content of the file in the branch, thereafter commit it
+Lets switch to the main branch #make a correction on it too and commit it too using
+git commit -a -m "note"
+
+if we try to merge the branches, it will create a conflict. You need to open the file back because git would have
+created the content twice, then choose the one you want to keep and the one to commit.
+commit it again. Let's now talk about GITHUB
+
+
+
+GETTING HELP ON GIT
+you can press 
+git config -h 
+you can also press (git help config)
+
+some git commands are:
+git init which initiaties git
+git config which config git
+git push helps us to push to github
+git pull helps to bring down changes from the github repository to our local machine
+git commit -m ("this stage you need a message in order to commit changes")
+git log
+git add
+git add .
+git branch
+git merge
+git clone brings a folder that is hosted on github to a folder on your local machine.
+git status shows the status if we have any commit there
+gitignore ignnores files that we don't want to upload on our github
+git log shows all commits that we have done
+git --versions shows if you have git installed on your local machine
+
+WHAT IS GITHUB?
+GITHUB is an online site, it is a hosting platform and where you can allow people collaborate with you on your 
+repository. GITHUB is one of the most popular repository host in the world, you can track issues, work with people on github
+GITHUB is a social coding website.
+CREATE AN ACCOUNT
+
+CREATE A NEW repository
+Repository Name: This is the name of your repository. 
+Public Repository: This means you are making the repository public and anybody can access it. 
+Private Repository: This means you are making the repository private and only you and people you give access to can access it. 
+
+Pushing Repository
+When you create a new repository, some instructions are given, follow suit.
+git remote add origin  ("The github link follows")
+git branch -M main
+git push -u origin main
+if you have another branch you want to push, you can enter
+git push --all
+
+FETCHING FROM GITHUB
+when you make changes on github, you can bring them to your repository directly.
+git fetch #this will help us fetch all from our GITHUB
+Then,
+git merge #to merge them all
+
+#you can also use git pull instead of typing the two previous commands.
+CLONING A SOURCE code
+go to the repository you want to clone, click on code, copy the link.
+go to your system, create a new folder and name it the project name, navigate into the folder on your gitbash
+git clone "the path you copied"
+
